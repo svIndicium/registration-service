@@ -1,0 +1,65 @@
+buildscript {
+    apply from: "dependencies.gradle"
+}
+plugins {
+    id "com.github.johnrengelman.shadow" version "$shadowJarVersion"
+    id "org.jetbrains.kotlin.jvm" version "$kotlinVersion"
+    id "org.jetbrains.kotlin.kapt" version "$kotlinVersion"
+    id "org.jetbrains.kotlin.plugin.allopen" version "$kotlinVersion"
+    id "io.micronaut.application" version "$micronautGradlePluginVersion"
+}
+
+group = "hu.indicium.dev.services"
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/svIndicium/*")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+
+dependencies {
+    kapt supportDependencies.micronaut_inject_java
+
+    implementation supportDependencies.indicium_general_lib
+    implementation supportDependencies.indicium_skeleton
+    implementation supportDependencies.indicium_model
+}
+
+application {
+    mainClass.set("hu.indicium.dev.services.Application")
+}
+
+tasks {
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+            javaParameters = true
+        }
+    }
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+            javaParameters = true
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+allOpen {
+    annotation("io.micronaut.aop.Around")
+}
