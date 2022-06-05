@@ -1,4 +1,4 @@
-package hu.indicium.dev.services.events.api
+package hu.indicium.dev.services.registrations.api
 
 import hu.indicium.dev.model.users.Contact
 import hu.indicium.dev.model.users.Name
@@ -6,8 +6,8 @@ import hu.indicium.dev.model.users.Personal
 import hu.indicium.dev.rest.HttpResponse
 import hu.indicium.dev.rest.HttpResponse.Builder.Companion.created
 import hu.indicium.dev.rest.HttpResponse.Builder.Companion.ok
-import hu.indicium.dev.services.events.api.commands.CreateRegistrationCommand
-import hu.indicium.dev.services.events.model.Registration
+import hu.indicium.dev.services.registrations.api.commands.CreateRegistrationCommand
+import hu.indicium.dev.services.registrations.model.Registration
 import hu.indicium.dev.structure.BaseController
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.annotation.*

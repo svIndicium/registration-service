@@ -1,4 +1,4 @@
-package hu.indicium.dev.services.events.api.commands
+package hu.indicium.dev.services.registrations.api.commands
 
 import java.time.LocalDate
 import javax.validation.Valid

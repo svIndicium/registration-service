@@ -1,4 +1,4 @@
-package hu.indicium.dev.services.events.model
+package hu.indicium.dev.services.registrations.model
 
 import hu.indicium.dev.model.users.Personal
 import hu.indicium.dev.model.users.Contact

@@ -1,7 +1,7 @@
-package hu.indicium.dev.services.events.api
+package hu.indicium.dev.services.registrations.api
 
-import hu.indicium.dev.services.events.model.Registration
-import hu.indicium.dev.services.events.persistency.RegistrationRepository
+import hu.indicium.dev.services.registrations.model.Registration
+import hu.indicium.dev.services.registrations.persistency.RegistrationRepository
 import hu.indicium.dev.structure.BaseService
 import jakarta.inject.Singleton
 

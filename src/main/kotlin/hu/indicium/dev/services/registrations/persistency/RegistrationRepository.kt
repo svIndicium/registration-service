@@ -1,8 +1,8 @@
-package hu.indicium.dev.services.events.persistency
+package hu.indicium.dev.services.registrations.persistency
 
 import hu.indicium.dev.mongodb.BaseRepository
 import hu.indicium.dev.mongodb.MongoConfig
-import hu.indicium.dev.services.events.model.Registration
+import hu.indicium.dev.services.registrations.model.Registration
 import jakarta.inject.Singleton
 import org.litote.kmongo.coroutine.CoroutineClient
 
